@@ -1,33 +1,53 @@
 package com.asif.pantryOrganizer.model;
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
+
+import java.util.Date;
 
 @Entity
 @Table(name="food")
 public class Food implements IItem {
     @Id
+    @Column(unique=true, nullable=false)
     private String name;
     private String description;
-    private Boolean expirable;
+    @Nullable
+    private Date expiration;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name="category_id")
     private Category category;
     private Boolean doRefrigerate;
+    private ELocation location;
+
+    public void setName(String name) {
+        this.name = name.toLowerCase();
+    }
 
     public void setCategory(Category category) {
         this.category = category;
     }
 
-    public Food(String name, String description, Boolean expirable, String category, Boolean doRefrigerate) {
-        this.name = name;
+    @Override
+    public void setDescription(String description) {
         this.description = description;
-        this.expirable = expirable;
-        this.category = new Category(category);
+    }
+
+    @Override
+    public void setExpiration(Date expiration) {
+        this.expiration = expiration;
+    }
+
+    public void setDoRefrigerate(Boolean doRefrigerate) {
         this.doRefrigerate = doRefrigerate;
     }
 
-    public Food() {
-        this.name = "Food";
+    public void setLocation(ELocation location) {
+        this.location = location;
+    }
+
+    public ELocation getLocation() {
+        return location;
     }
 
     @Override
@@ -40,9 +60,17 @@ public class Food implements IItem {
         return description;
     }
 
+    public Date getExpiration() {
+        return expiration;
+    }
+
+    public Boolean getDoRefrigerate() {
+        return doRefrigerate;
+    }
+
     @Override
     public Boolean doesExpire() {
-        return expirable;
+        return expiration != null;
     }
 
     @Override

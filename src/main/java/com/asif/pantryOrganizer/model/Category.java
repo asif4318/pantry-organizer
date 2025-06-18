@@ -17,7 +17,7 @@ public class Category {
     private String name;
 
     public Category(String name) {
-        this.name = name;
+        this.name = name.toLowerCase();
     }
 
     public Category() {}
@@ -29,7 +29,7 @@ public class Category {
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Food> foods = new HashSet<>();
 
-    public void addFood(Food food) {
-        foods.add(food);
+    public Long getId() {
+        return id;
     }
 }
