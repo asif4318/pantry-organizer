@@ -1,6 +1,6 @@
-package com.example.spring1.repository;
+package com.asif.pantryOrganizer.repository;
 
-import com.example.spring1.model.Category;
+import com.asif.pantryOrganizer.model.Category;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.repository.CrudRepository;
 

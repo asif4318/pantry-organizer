@@ -1,4 +1,4 @@
-package com.example.spring1.model;
+package com.asif.pantryOrganizer.model;
 
 public interface IItem {
     String getName();

@@ -1,6 +1,5 @@
-package com.example.spring1.model;
+package com.asif.pantryOrganizer.model;
 import jakarta.persistence.*;
-import org.hibernate.annotations.Cascade;
 
 @Entity
 @Table(name="food")

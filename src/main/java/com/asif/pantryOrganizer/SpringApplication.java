@@ -1,4 +1,4 @@
-package com.example.spring1;
+package com.asif.pantryOrganizer;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

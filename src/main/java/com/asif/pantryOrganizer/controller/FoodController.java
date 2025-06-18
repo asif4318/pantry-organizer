@@ -1,7 +1,7 @@
-package com.example.spring1.controller;
+package com.asif.pantryOrganizer.controller;
 
-import com.example.spring1.model.Food;
-import com.example.spring1.repository.IFoodRepository;
+import com.asif.pantryOrganizer.model.Food;
+import com.asif.pantryOrganizer.repository.IFoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
