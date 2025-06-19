@@ -4,6 +4,10 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+.DS_STORE
+._.DS_STORE
+**/.DS_STORE
+**/._.DS_STORE
 
 ### STS ###
 .apt_generated
